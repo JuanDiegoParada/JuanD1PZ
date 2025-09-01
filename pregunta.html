@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Química Moderna</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #e6f7ff, #ffffff);
+  }
+
+  header {
+    background: linear-gradient(90deg, #0f3057, #00587a, #008891);
+    padding: 20px 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    position: relative;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s;
+  }
+
+  nav a:hover {
+    color: #ffde59;
+    transform: scale(1.05);
+  }
+
+  nav ul li::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #ffde59;
+    transition: width 0.3s;
+  }
+
+  nav ul li:hover::after {
+    width: 100%;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    nav ul {
+      flex-direction: column;
+      background-color: #008891;
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 200px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+
+    nav ul.active {
+      max-height: 500px;
+    }
+
+    .menu-toggle {
+      display: block;
+      cursor: pointer;
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    font-size: 26px;
+    color: white;
+    background: none;
+    border: none;
+  }
+
+  /* --- Estilos de secciones --- */
+  section {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 40px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  section h2 {
+    margin-bottom: 20px;
+    color: #00587a;
+    text-align: center;
+  }
+
+  iframe {
+    width: 100%;
+    height: 600px;
+    border-radius: 12px;
+    border: none;
+  }
+
+  /* Quiz */
+  #module-select {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  #question {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  #options {
+    list-style: none;
+    padding: 0;
+  }
+
+  #options li {
+    padding: 12px;
+    margin: 8px 0;
+    background: #f0f8ff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  #options li:hover {
+    background: #d1f3ff;
+  }
+
+  #feedback {
+    margin-top: 15px;
+    font-weight: 600;
+  }
+
+  #next-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #008891;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+
+  #next-btn:hover {
+    background: #00587a;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">🔬 Química Moderna</div>
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+  <nav>
+    <ul id="menu">
+      <li><a href="inicio.html">Inicio</a></li>
+      <li><a href="experimentos.html">Experimentos</a></li>
+      <li><a href="teoria.html">Teoría</a></li>
+      <li><a href="elemento.html">Tabla Periódica</a></li>
+      <li><a href="pregunta.hmlt">Preguntas</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- SECCIÓN INICIO -->
+<section id="inicio">
+  <h2>Inicio</h2>
+  <p>Bienvenido a <strong>Química Moderna</strong>. Aquí encontrarás teoría, experimentos, la tabla periódica interactiva y un quiz para poner a prueba tus conocimientos.</p>
+</section>
+
+
+<script src="app.js"></script>
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
